@@ -1,4 +1,10 @@
-<div>
-
-
+<div class="page-detail" data-sly-use.model="com.example.core.models.PageDetailModel">
+    <h1>${model.text}</h1>
+    <h2>page title: ${model.title}</h2>
+    <h2>page description: ${model.description}</h2>
+    <h2>page Last Modified: ${model.lastModified}</h2>
+    <h2>page LastModified By: ${model.lastModifiedBy}</h2>
 </div>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <sly data-sly-call="${clientLib.css @ categories='mysite.pagedetail'}" data-sly-unwrap></sly>
+</sly>
