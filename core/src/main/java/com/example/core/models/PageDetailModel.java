@@ -24,8 +24,6 @@ public class PageDetailModel {
     private String lastModified;
     private String lastModifiedBy;
 
-     @ValueMapValue
-     private String text;
 
      public String getTitle(){
          return title;
@@ -49,9 +47,6 @@ public class PageDetailModel {
          return description;
      }
 
-     public String getText(){
-         return text;
-     }
 
      public String getLastModified(){
          return lastModified;
