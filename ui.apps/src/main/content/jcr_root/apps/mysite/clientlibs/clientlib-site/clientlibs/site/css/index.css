@@ -1,0 +1,41 @@
+.acquisitions-banner {
+  margin-top: 25px;
+  padding-bottom: 30px;
+}
+
+.rj-breadcrumb {
+  font: 500 20px/1.2 "Helvetica Neue LT W1G";
+  margin-bottom: 16px;
+  color: #797A7D;
+}
+
+.internal-investor-desc {
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.section-heading {
+  font: 400 50px/1.2 var(--font-helvetica-neue);
+}
+
+@media screen and (max-width:768px) {
+
+  .rj-breadcrumb{
+    font: 700 14px/24px var(--font-helvetica-neue);
+  }
+
+  .acquisitions-banner .font-400-20{
+    font: 400 16px/1.5 var(--font-helvetica-neue);
+  }
+
+  .internal-recent-text .font-400-20{
+    font: 400 16px/1.5 var(--font-helvetica-neue);
+  }
+
+  .internal-recent-text .read-more-btn-wrapper a{
+    color: #e71316;
+  }
+  .internal-recent-text .read-more-btn-wrapper img{
+    display: none;
+  }
+}
