@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* push content down */
+
+.cmp-container {
+    margin-top: 34px;
+}
