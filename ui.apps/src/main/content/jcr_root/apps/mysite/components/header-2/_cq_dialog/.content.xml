@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="header"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <logo
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Logo Image"
+                            name="./logoPath"
+                            rootPath="/content/dam/mysite"
+                            droppable="{Boolean}true"/>
+                    <logoURL
+                            jcr:primaryType="nt:unstructured"
+                            sling:orderBefore="icon"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldDescription="Download Report Link URL"
+                            fieldLabel="logo URL"
+                            name="./logoUrl"
+                            wrapperClass="cq-dialog-showhide-navigation"/>
+
+                    <joinLabel
+                            jcr:primaryType="nt:unstructured"
+                            sling:orderBefore="icon"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Download Report Label"
+                            fieldLabel="Join Label"
+                            name="./joinLabel"
+                            wrapperClass="cq-dialog-showhide-navigation"/>
+                    <joinLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:orderBefore="icon"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldDescription="Download Report Link URL"
+                            fieldLabel="Join URL"
+                            name="./joinLink"
+                            wrapperClass="cq-dialog-showhide-navigation"/>
+                    <worldwideLabel
+                            jcr:primaryType="nt:unstructured"
+                            sling:orderBefore="icon"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Download Report Label"
+                            fieldLabel="worldwide Label"
+                            name="./worldwideLabel"
+                            wrapperClass="cq-dialog-showhide-navigation"/>
+                    <worldwideLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:orderBefore="icon"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldDescription="Download Report Link URL"
+                            fieldLabel="worldwide URL"
+                            name="./worldwideLink"
+                            wrapperClass="cq-dialog-showhide-navigation"/>
+
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

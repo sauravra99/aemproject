@@ -1,0 +1,32 @@
+<header data-sly-use.model="com.example.core.models.HeaderModel">
+    <div class="header-container">
+        <div class="left-group">
+            <div class="header-logo">
+                <a href="${model.logoUrl}">
+                    <img src="${model.logoPath}" alt="logo">
+                </a>
+
+            </div>
+            <div class="header-nav">
+                <ul data-sly-list.item="${model.navItems}">
+                    <li>
+                        <a href="${item.path}">${item.title}</a>
+                        <ul class="dropdown" data-sly-test="${item.children.size > 0}" data-sly-list.sub="${item.children}">
+                            <li><a href="${sub.path}">${sub.title}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-group">
+            <ul>
+                <li><a href="${model.joinLink}">${model.joinLabel}</a></li>
+                <li><a href="${model.worldwideLink}">${model.worldwideLabel}</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <sly data-sly-call="${clientLib.css @ categories='mysite.header'}" data-sly-unwrap></sly>
+</sly>
