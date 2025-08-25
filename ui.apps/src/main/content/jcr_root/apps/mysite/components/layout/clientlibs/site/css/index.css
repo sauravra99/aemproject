@@ -1,0 +1,12 @@
+.custom-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.custom-layout.two .column {
+  flex: 1 1 50%;
+}
+
+.custom-layout.three .column {
+  flex: 1 1 33.3%;
+}

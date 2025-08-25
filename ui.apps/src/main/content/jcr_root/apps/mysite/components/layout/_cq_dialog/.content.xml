@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        jcr:primaryType="nt:unstructured"
+        cq:dialogMode="floating"
+        jcr:title="Column Layout"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+            <layoutType
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                    fieldLabel="Layout Type"
+                    name="./layoutType">
+                <items jcr:primaryType="nt:unstructured">
+                    <two
+                            jcr:primaryType="nt:unstructured"
+                            text="2 Columns"
+                            value="two"/>
+                    <three
+                            jcr:primaryType="nt:unstructured"
+                            text="3 Columns"
+                            value="three"/>
+                </items>
+            </layoutType>
+        </items>
+    </content>
+</jcr:root>

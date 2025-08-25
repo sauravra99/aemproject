@@ -1,0 +1,21 @@
+<div class="custom-layout ${columnLayout.layoutType}"
+     data-sly-use.columnLayout="com.example.core.models.LayoutModel">
+
+    <div class="column">
+        <sly data-sly-resource="${'col1' @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+    </div>
+
+    <div class="column">
+        <sly data-sly-resource="${'col2' @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+    </div>
+
+    <sly data-sly-test="${columnLayout.threeColumn}">
+        <div class="column">
+            <sly data-sly-resource="${'col3' @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+        </div>
+    </sly>
+</div>
+
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <sly data-sly-call="${clientLib.css @ categories='mysite.layout'}" data-sly-unwrap></sly>
+</sly>
