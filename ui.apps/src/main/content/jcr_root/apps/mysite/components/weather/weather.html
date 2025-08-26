@@ -1,0 +1,12 @@
+
+<div class="weather" data-sly-use.weatherModel="com.example.core.models.WeatherModel">
+    <h3>Weather in ${weatherModel.city}</h3>
+    <p>🕒 Local Time: ${weatherModel.localtime}</p>
+    <p>🌡️ Temperature: ${weatherModel.temperature} °C</p>
+    <p>💧 Humidity: ${weatherModel.humidity}%</p>
+    <p>🌤️ Condition: ${weatherModel.condition}</p>
+</div>
+
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <sly data-sly-call="${clientLib.css @ categories='mysite.weather'}" data-sly-unwrap></sly>
+</sly>
