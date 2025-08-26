@@ -26,7 +26,7 @@ public class WeatherServiceImpl implements WeatherService {
     @ObjectClassDefinition(name = "Weather Service Configuration")
     public @interface Config {
         @AttributeDefinition(name = "API Key", description = "WeatherAPI.com Key")
-        String apiKey() default "ef0f48c1ce4b490480160823252608";
+        String apiKey() default " ";
 
         @AttributeDefinition(name = "Base URL", description = "Weather API Base URL")
         String baseUrl() default "http://api.weatherapi.com/v1/current.json";
