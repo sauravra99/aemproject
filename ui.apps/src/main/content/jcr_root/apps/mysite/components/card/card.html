@@ -1,0 +1,14 @@
+<a href="${card.link}" target="${card.openInNewTab ? '_blank' : '_self'}" rel="${card.openInNewTab ? 'noopener noreferrer' : ''}" class="custom-card-link" data-sly-use.card="com.example.core.models.CardModel">
+    <div class="custom-card">
+        <img src="${card.fileReference @ context='uri'}" alt="Oil Rig" class="custom-card-image">
+        <div class="custom-card-content">
+            <h2 class="custom-card-title"> ${card.title} <span class="arrow">→</span></h2>
+            <div class="custom-card-description">
+                ${card.description @ context='html'}
+            </div>
+        </div>
+    </div>
+</a>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <sly data-sly-call="${clientLib.css @ categories='mysite.card'}" data-sly-unwrap></sly>
+</sly>
