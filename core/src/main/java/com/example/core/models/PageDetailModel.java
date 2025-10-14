@@ -19,6 +19,8 @@ public class PageDetailModel {
     @ScriptVariable
     private Page currentPage;
 
+
+
     private String title;
     private String description;
     private String lastModified;

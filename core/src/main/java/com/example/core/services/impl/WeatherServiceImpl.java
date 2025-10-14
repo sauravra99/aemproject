@@ -19,6 +19,7 @@ import java.nio.charset.StandardCharsets;
 
 @Component(service = WeatherService.class, immediate = true)
 @Designate(ocd = WeatherServiceImpl.Config.class)
+
 public class WeatherServiceImpl implements WeatherService {
 
     private static final Logger log = LoggerFactory.getLogger(WeatherServiceImpl.class);
