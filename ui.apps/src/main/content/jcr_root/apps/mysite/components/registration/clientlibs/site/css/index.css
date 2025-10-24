@@ -1,0 +1,71 @@
+.custom-form-wrapper {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.custom-form .form-group {
+  margin-bottom: 20px;
+}
+
+.custom-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.custom-form .required {
+  color: #e63946;
+}
+
+.custom-form input,
+.custom-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+.custom-form input:focus,
+.custom-form textarea:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.2);
+  outline: none;
+}
+
+.custom-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.custom-form .form-actions {
+  text-align: right;
+}
+
+.btn-submit {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #005fa3;
+}
+
+.heading{
+text-align:center;
+color: #5c73d3;
+}

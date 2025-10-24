@@ -1,0 +1,29 @@
+
+<div class="custom-form-wrapper" data-sly-use.model="com.example.core.models.RegistrationModel">
+    <form class="custom-form" method="post" action="${resource.path}.formsubmit.json">
+        <div class="form-group">
+            <h2 class="heading">${model.heading}</h2>
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address <span class="required">*</span></label>
+            <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">${model.submitLabel}</button>
+        </div>
+    </form>
+</div>
+
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <sly data-sly-call="${clientLib.css @ categories='mysite.registration'}" data-sly-unwrap></sly>
+    <sly data-sly-call="${clientLib.js @ categories='mysite.registration'}" data-sly-unwrap></sly>
+</sly>
