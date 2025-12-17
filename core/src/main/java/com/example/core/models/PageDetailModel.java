@@ -39,6 +39,7 @@ public class PageDetailModel {
              this.lastModifiedBy=currentPage.getLastModifiedBy();
              Calendar mod = this.currentPage.getLastModified();
 
+
              if (mod!=null){
                  this.lastModified=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(mod.getTime());
              }

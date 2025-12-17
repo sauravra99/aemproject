@@ -8,6 +8,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 
+import org.apache.sling.servlets.annotations.SlingServletPaths;
 import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.service.component.annotations.Component;
 
@@ -48,6 +49,7 @@ public class ResourceBasedServlet extends SlingSafeMethodsServlet {
 
         Resource resource = resourceResolver.getResource(pagePath);
         Resource contentResource = resource.getChild("jcr:content");
+
         JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
 
         if (contentResource!=null){

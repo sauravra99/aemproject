@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 @Component(
         service = WorkflowProcess.class,
         property = {
-                "process.label=Custom - Page Validation"
+                "process.label=Page Validation"
         }
 )
 public class PageValidationProcess implements WorkflowProcess {
