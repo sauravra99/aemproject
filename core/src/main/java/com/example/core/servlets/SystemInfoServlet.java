@@ -34,6 +34,7 @@ public class SystemInfoServlet extends SlingAllMethodsServlet{
     @Override
     protected void doGet(SlingHttpServletRequest request,  SlingHttpServletResponse response)
             throws ServletException, IOException {
+        
 
                 Map <String , Object > params = new HashMap<>();
 
@@ -46,8 +47,12 @@ public class SystemInfoServlet extends SlingAllMethodsServlet{
                     String javaVersion = System.getProperty("java.version");
                     String osName = System.getProperty("os.name");
 
+                    String userId= resourceResolver.getUserID();
+
                     json.addProperty("osName", osName);
                     json.addProperty("java version", javaVersion);
+                    json.addProperty("userId", userId);
+
 
                  
                     Resource content = resourceResolver.getResource("/content/mysite/us/en");
@@ -63,6 +68,7 @@ public class SystemInfoServlet extends SlingAllMethodsServlet{
 
                     response.setContentType("application/json");
                     response.getWriter().write(json.toString());
+                    
 
                     log.info("Service user id {} : ", resourceResolver.getUserID());
                      
