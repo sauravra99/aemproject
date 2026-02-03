@@ -1,0 +1,5 @@
+{
+  "scripts": [
+    "create service user my-project-service\nset ACL for my-project-service\n  allow jcr:read on /content\nend"
+  ]
+}
