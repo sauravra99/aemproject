@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.jcr.Session;
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObjectBuilder;
 import javax.jcr.RepositoryException;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
@@ -30,9 +33,7 @@ public class QueryBuilderServlet extends SlingAllMethodsServlet {
     @Override
     protected void doGet(SlingHttpServletRequest request,
                          SlingHttpServletResponse response)
-            throws ServletException, IOException {
-
-        response.setContentType("application/json");
+            throws ServletException, IOException {        
 
         ResourceResolver resourceResolver = request.getResourceResolver();
 
@@ -48,6 +49,7 @@ public class QueryBuilderServlet extends SlingAllMethodsServlet {
         map.put("path", "/content/mysite/us/en/home");
         map.put("type", "cq:Page");
         map.put("p.limit", "-1");
+        map.put("p.nodedepth", "1"); 
 
         // Create Query
         Query query = queryBuilder.createQuery(
@@ -57,32 +59,29 @@ public class QueryBuilderServlet extends SlingAllMethodsServlet {
 
         SearchResult result = query.getResult();
 
-        StringBuilder json = new StringBuilder();
-        json.append("{ \"pages\" : [");
+        //creating array builder to store the paths of the results
 
-        boolean first = true;
+       JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
 
         try {
             for (Hit hit : result.getHits()) {
 
-                if (!first) {
-                    json.append(",");
-                }
-
-                json.append("\"")
-                    .append(hit.getPath())
-                    .append("\"");
-
-                first = false;
-            }
-
-        } catch (RepositoryException e) {
+                arrayBuilder.add(hit.getPath());
+            }        
+        }
+        catch (RepositoryException e) {
             response.getWriter().write("{\"error\":\"Repository error\"}");
             return;
         }
 
-        json.append("]}");
+        // Create JSON object builder to build the final JSON response
 
-        response.getWriter().write(json.toString());
+        JsonObjectBuilder objectBuilder = Json.createObjectBuilder();
+
+        objectBuilder.add("path", arrayBuilder);
+
+        response.setContentType("application/json");
+
+        response.getWriter().write(objectBuilder.build().toString());
     }
 }
